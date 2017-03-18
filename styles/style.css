@@ -1,14 +1,12 @@
 .container{
 	width: 50%;
-	/*text-align: center;*/
-
+	margin-top: 2%;
 }
 
 ul {
     list-style: none;
     padding-left: 0;
     margin-top: 15px;
-
 }
 
 ul li.todo-done {
@@ -16,25 +14,20 @@ ul li.todo-done {
     text-decoration: line-through;
 }
 
-#todoText{
-	width: 88%;
-	margin-left: 40px;
-	height: 35px;
+.list-group-item button{
+	display: none;
+}
 
+.list-group-item:hover button{
+	display: inline-block;
 }
 
 #clearCompleted{
 	float: right;
 }
 
-.btn-group{
-	margin-left: 140px;
+.buttonX{
+	float: right;
+	font-size: 10px;
+	margin-top: -4px;
 }
-
-li{
-	border: 1px solid lightgray;
-	padding: 5px 13px;
-
-
-}
-

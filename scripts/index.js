@@ -5,6 +5,12 @@ var clearCompleted = document.querySelector("#clearCompleted");
 var markAllCompleted = document.querySelector("#markAllCompleted");
 var todoIndexValue = 0;
 
+var showAll = document.querySelector("#showAll");
+var showActive = document.querySelector("#showActive");
+var showCompleted = document.querySelector("#showCompleted");
+
+todoIndexValue = 0;
+
 var todos = [{
     text: "first todo",
     isDone: false,
@@ -29,11 +35,14 @@ clearCompleted.onclick = function() {
     todos.forEach(function(todo, i) {
         if (todo.isDone == true) {
             var li = document.querySelector("li[todo-index='" + todo.index + "']");
-            todos.splice(i, 1);
-            // TODO: investigate todo.index possible workflow
             todosList.removeChild(li);
         }
     });
+
+            todos = todos.filter(function(todo){
+                return todo.isDone == false;
+
+            });
 }
 
 markAllCompleted.onclick = function() {
@@ -48,7 +57,7 @@ markAllCompleted.onclick = function() {
 
             todo.isDone = false;
             checkbox.checked = false;
-            li.setAttribute("class", "")
+            li.setAttribute("class", "list-group-item")
         });
     } else {
         todos.forEach(function(todo) {
@@ -57,20 +66,32 @@ markAllCompleted.onclick = function() {
 
             todo.isDone = true;
             checkbox.checked = true;
-            li.setAttribute("class", "todo-done")
+            li.setAttribute("class", "list-group-item todo-done")
         });
     }
 
     countActiveTodos();
 }
+    showActive.onclick - function(){
+        renderTodos(false);
 
-function renderTodos() {
+}
+
+
+function renderTodos(todoFilter) {
     var todoElementTemplate = document.querySelector("div li").cloneNode(true);
+    var filtredTodos = todos;
 
     if (todos.length == 0) {
         todosList.innerHTML = "";
         return;
     }
+
+    if(todoFilter != null){
+    filtredTodos = filtredTodos.filter(function(todo){
+        return todo.isDone == todoFilter;
+    });
+}
 
     todos.forEach(function(todo) {
         todoElementTemplate.querySelector("span").innerText = todo.text;
@@ -86,10 +107,10 @@ function renderTodos() {
             todo = todos[todo];
 
             if (e.path[0].checked) {
-                li.setAttribute("class", "todo-done");
+                li.setAttribute("class", "list-group-item todo-done");
                 todo.isDone = true;
             } else {
-                li.setAttribute("class", "");
+                li.setAttribute("class", "list-group-item");
                 todo.isDone = false;
             }
             countActiveTodos();
@@ -119,5 +140,5 @@ function countActiveTodos() {
     todosLeft.innerText = activeTodos.length;
 }
 
-renderTodos();
+renderTodos(null);
 countActiveTodos();
