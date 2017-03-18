@@ -1,8 +1,29 @@
+.container{
+	width: 50%;
+	/*text-align: center;*/
+
+}
+
 ul {
     list-style: none;
+    padding-left: 0;
+
 }
 
 ul li.todo-done {
     color: gray;
     text-decoration: line-through;
+}
+
+#todoText{
+	width: 88%;
+	margin-left: 40px;
+}
+
+#clearCompleted{
+	float: right;
+}
+
+.btn-group{
+	margin-left: 140px;
 }

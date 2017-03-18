@@ -13,22 +13,25 @@
 
 <body>
     <div class="container">
-        <button id="markAllCompleted">O</button> <input type="text" id="todoText" />
+     
+        <button class="btn btn-default" id="markAllCompleted"><i class="fa fa-angle-double-down" aria-hidden="true"></i></button> <input type="text" id="todoText" placeholder="Type your ToDo..." />
 
         <ul id="todoList"></ul>
 
         <div>
             <span>Todos left: <span id="todosLeft"></span></span>
 
-            <button id="showAll">All</button>
-            <button id="showActive">Active</button>
-            <button id="showCompleted">Completed</button>
+            <div class="btn-group">
 
-            <button id="clearCompleted">Clear completed</button>
+            <button class="btn btn-default" id="showAll">All</button>
+            <button class="btn btn-default" id="showActive">Active</button>
+            <button class="btn btn-default" id="showCompleted">Completed</button> </div>
+
+            <button class="btn btn-default" id="clearCompleted">Clear completed</button>
         </div>
 
         <div style="display: none;">
-            <li><input type="checkbox"> <span>Todo text</span> <button>X</button></li>
+            <li ><input type="checkbox"> <span>Todo text</span> <button class="btn btn-default"><i class="fa fa-times" aria-hidden="true"></i></button></li>
         </div>
     </div>
 
