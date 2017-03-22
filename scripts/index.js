@@ -9,13 +9,9 @@ var showAll = document.querySelector("#showAll");
 var showActive = document.querySelector("#showActive");
 var showCompleted = document.querySelector("#showCompleted");
 
-todoIndexValue = 0;
+var todoIndexValue = 0;
 
-var todos = [{
-    text: "first todo",
-    isDone: false,
-    index: 0
-}];
+var todos = [];
 
 inputText.onkeypress = function(e) {
     if (e.keyCode == 13) {
@@ -140,5 +136,25 @@ function countActiveTodos() {
     todosLeft.innerText = activeTodos.length;
 }
 
-renderTodos(null);
-countActiveTodos();
+function updateLocalStorage(){
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+
+function init(){
+    var localStorageTodos = localStorage.todos;
+    
+    if(localStorageTodos != underfined){
+        todos = JSON.parse(localStorageTodos); 
+    }
+   
+
+    renderTodos(null);
+    countActiveTodos(); 
+}
+
+init();
+
+
+
+

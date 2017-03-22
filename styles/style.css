@@ -1,6 +1,28 @@
+body{
+		background-color: #dfdfdf;
+}
+
+h1{
+	font-size: 130px;
+	color: #edc5c5;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 40px;
+	font-weight: 300;
+}
+
 .container{
 	width: 50%;
-	margin-top: 2%;
+	margin-top: 50px;
+	background: #fff;
+    box-shadow:
+    0 1px 1px rgba(0,0,0,0.15),
+    0 10px 0 -5px #eee,
+    0 10px 1px -4px rgba(0,0,0,0.15),
+    0 20px 0 -10px #eee,
+    0 20px 1px -9px rgba(0,0,0,0.15),
+    -4px 4px 39px 1px rgba(0,0,0,0.48);
+    padding: 30px;
 }
 
 ul {
@@ -24,10 +46,63 @@ ul li.todo-done {
 
 #clearCompleted{
 	float: right;
+	border: none;
+	text-decoration: underline;
 }
+
+#markAllCompleted{
+	border: none;
+	color: gray;
+	background: none;
+}
+
+#markAllCompleted:hover{
+	border: none;
+}
+
+#markAllCompleted:focus{
+	outline: none;
+	color: black;
+}
+
+#todoText{
+	border: none;
+	width: 100%;
+	font-size: 30px;
+}
+::-webkit-input-placeholder { 
+  color: #cfcfcf;
+  font-style: italic;
+  font-weight: 100;
+}
+
+ #todoText:focus{
+ 	outline: none;
+ }
 
 .buttonX{
 	float: right;
 	font-size: 10px;
 	margin-top: -4px;
+}
+
+input.checkboxing{
+	margin-right: 30px;
+}
+
+.list-group-item{
+	font-size: 20px;
+	font-weight: 200;
+}
+
+.list-group-item:first-child{
+	border-radius: 0;
+}
+
+.list-group-item:last-child{
+	border-radius: 0;
+}
+
+.buttons{
+	text-align: center;
 }

@@ -13,28 +13,29 @@
 
 <body>
     <div class="container">
+    <h1>todos</h1>
      <div class="row">
-       <div class="col-md-1"> <button class="btn btn-default" id="markAllCompleted"><i class="fa fa-angle-double-down" aria-hidden="true"></i></button></div> <div class="col-md-11"><input class="form-control" type="text" id="todoText" placeholder="Type your ToDo..." /></div></div>
+       <div class="col-md-1"> <button id="markAllCompleted"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i></button></div> <div class="col-md-11"><input  type="text" id="todoText" placeholder="What needs to be done?" /></div></div>
 
        <ul id="todoList" class="list-group"></ul>
 
         <div class="row">
-            <div class="col-md-4"><span>Todos left: <span id="todosLeft"></span></span></div>
+            <div class="col-md-3"><span>Todos left: <span id="todosLeft"></span></span></div>
 
-            <div class="btn-group col-md-4">
+            <div class=" buttons col-md-6">
 
             <button class="btn btn-default" id="showAll">All</button>
             <button class="btn btn-default" id="showActive">Active</button>
             <button class="btn btn-default" id="showCompleted">Completed</button> </div>
 
-            <div class="col-md-4 "><button class="btn btn-default " id="clearCompleted">Clear completed</button></div>
+            <div class="col-md-3"><button class="btn btn-default " id="clearCompleted">Clear completed</button></div>
         </div>
 
         <div style="display: none;" >
-            <li class="list-group-item"><input type="checkbox"> <span>Todo text</span> <button class="btn btn-default buttonX"><i class="fa fa-times" aria-hidden="true"></i></button></li>
+            <li class="list-group-item"><input class="checkboxing" type="checkbox"> <span>Todo text</span> <button class="btn btn-default buttonX"><i class="fa fa-times" aria-hidden="true"></i></button></li>
         </div>
     </div>
-
+    <script src="./scripts/jquery.min.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 
